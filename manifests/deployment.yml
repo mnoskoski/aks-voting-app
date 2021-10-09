@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "aksdev-3bd3"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "aksdev-3bd3"
+  template:
+    metadata:
+      labels:
+        app: "aksdev-3bd3"
+    spec:
+      containers:
+        - name: "aksdev-3bd3"
+          image: "acrmnoskoski.azurecr.io/aksdev"
+          ports:
+          - containerPort: 8080
